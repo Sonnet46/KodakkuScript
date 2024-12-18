@@ -92,13 +92,46 @@ public class TheInterphos
         accessory.Method.SendDraw(DrawModeEnum.Default, DrawTypeEnum.Rect, dp2);
     }
 
-    // // DotAoE+左中右扇形范围AoE
-    // [ScriptMethod(name: "以太税", eventType: EventTypeEnum.StartCasting,
-    //     eventCondition: ["ActionId:regex:^(36604)$"])]
-    // public void Aethertithe(Event @event, ScriptAccessory accessory)
-    // {
-    //   
-    // }
+    // DotAoE+左中右扇形范围AoE
+    [ScriptMethod(name: "以太税（扭曲地板）左/右", eventType: EventTypeEnum.EnvControl, 
+        eventCondition: ["Id:regex:^(10000100|04000100)$"])]
+    public void AethertitheRight(Event @event, ScriptAccessory accessory)
+    {
+        if (!ParseObjectId("4000C9D4", out var sid)) return;
+        var id = @event["Id"];
+        var dp = accessory.Data.GetDefaultDrawProperties();
+        if (id == "10000100")
+        {
+            dp.Name = $"以太税（扭曲地板）右";
+            dp.Rotation = float.Pi * 11 / 36;
+        }
+        else
+        {
+            dp.Name = $"以太税（扭曲地板）左";
+            dp.Rotation = float.Pi * -11 / 36;
+        }
+        dp.Color = accessory.Data.DefaultDangerColor.WithW(3);
+        dp.Owner = sid;
+        dp.Scale = new Vector2(60);
+        dp.Radian = float.Pi / 2.5f;
+        dp.DestoryAt = 6000;
+        accessory.Method.SendDraw(DrawModeEnum.Default, DrawTypeEnum.Fan, dp);
+    }
+    [ScriptMethod(name: "以太税（扭曲地板）中", eventType: EventTypeEnum.EnvControl, 
+        eventCondition: ["Id:08000100"])]
+    public void AethertitheMid(Event @event, ScriptAccessory accessory)
+    {
+        if (!ParseObjectId("4000C9D4", out var sid)) return;
+        
+        var dp = accessory.Data.GetDefaultDrawProperties();
+        dp.Name = $"以太税（扭曲地板）中";
+        dp.Color = accessory.Data.DefaultDangerColor.WithW(3);
+        dp.Owner = sid;
+        dp.Scale = new Vector2(60);
+        dp.Radian = float.Pi / 2.5f;
+        dp.DestoryAt = 6000;
+        accessory.Method.SendDraw(DrawModeEnum.Default, DrawTypeEnum.Fan, dp);
+    }
     
     // 诉诸武力
     [ScriptMethod(name: "诉诸武力:死刑", eventType: EventTypeEnum.StartCasting, eventCondition: ["ActionId:36602"])]
@@ -199,7 +232,7 @@ public class TheInterphos
     
     // 4130 空间掌控：制动
     // 3815 空间掌控：石化光 
-    [ScriptMethod(name: "绝对君权 buff提示-1", eventType: EventTypeEnum.StatusAdd, eventCondition: ["StatusID:4130"])]
+    [ScriptMethod(name: "绝对君权 停止buff提示", eventType: EventTypeEnum.StatusAdd, eventCondition: ["StatusID:4130"])]
     public void Buff收集1(Event @event, ScriptAccessory accessory)
     {
         if (!ParseObjectId(@event["TargetId"], out var tid)) return;
@@ -213,7 +246,7 @@ public class TheInterphos
 
         }
     }
-    [ScriptMethod(name: "绝对君权 buff提示-2", eventType: EventTypeEnum.StatusAdd, eventCondition: ["StatusID:3815"])]
+    [ScriptMethod(name: "绝对君权 背对buff提示", eventType: EventTypeEnum.StatusAdd, eventCondition: ["StatusID:3815"])]
     public void Buff收集2(Event @event, ScriptAccessory accessory)
     {
         if (!ParseObjectId(@event["TargetId"], out var tid)) return;
