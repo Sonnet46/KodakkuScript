@@ -16,7 +16,7 @@ using KodakkuAssist.Module.Draw;
 
 namespace KodakkuScript.Script._07_DawnTrail;
 
-[ScriptType(guid: "1B2EE1F8-D74A-9B08-7E4A-1B02B8D4D5DE", name: "永恒女王歼灭战", territorys: [1202], version: "0.0.0.1",
+[ScriptType(guid: "1B2EE1F8-D74A-9B08-7E4A-1B02B8D4D5DE", name: "永恒女王歼灭战", territorys: [1202], version: "0.0.0.2",
         author: "Poetry")]
 public class TheInterphos
 {
@@ -247,8 +247,8 @@ public class TheInterphos
         {
             stopBuff = true;
             accessory.Method.TextInfo("稍后停止移动", 10000);
-            Thread.Sleep(15000);
-            accessory.Method.TextInfo("停止移动", 3000);
+            Thread.Sleep(14000);
+            accessory.Method.TextInfo("停止移动", 4000);
             accessory.Method.TTS("停止移动");
 
         }
@@ -261,8 +261,8 @@ public class TheInterphos
         {
             stopBuff = true;
             accessory.Method.TextInfo("稍后背对Boss", 10000);
-            Thread.Sleep(15000);
-            accessory.Method.TextInfo("背对Boss", 3000);
+            Thread.Sleep(14000);
+            accessory.Method.TextInfo("背对Boss", 4000);
             accessory.Method.TTS("背对Boss");
 
         }
