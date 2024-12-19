@@ -21,9 +21,11 @@ namespace KodakkuScript.Script._07_DawnTrail;
 public class TheInterphos
 {
     private bool stopBuff = false;
+    private uint bossId = 0;
     public void Init(ScriptAccessory accessory)
     {
         stopBuff = false ;  
+        bossId = 0;
     }
     private static bool ParseObjectId(string? idStr, out uint id)
     {
@@ -97,7 +99,6 @@ public class TheInterphos
         eventCondition: ["Id:regex:^(10000100|04000100)$"])]
     public void AethertitheRight(Event @event, ScriptAccessory accessory)
     {
-        if (!ParseObjectId("4000C9D4", out var sid)) return;
         var id = @event["Id"];
         var dp = accessory.Data.GetDefaultDrawProperties();
         if (id == "10000100")
@@ -111,7 +112,7 @@ public class TheInterphos
             dp.Rotation = float.Pi * -11 / 36;
         }
         dp.Color = accessory.Data.DefaultDangerColor.WithW(3);
-        dp.Owner = sid;
+        dp.Owner = bossId;
         dp.Scale = new Vector2(60);
         dp.Radian = float.Pi / 2.5f;
         dp.DestoryAt = 6000;
@@ -121,12 +122,10 @@ public class TheInterphos
         eventCondition: ["Id:08000100"])]
     public void AethertitheMid(Event @event, ScriptAccessory accessory)
     {
-        if (!ParseObjectId("4000C9D4", out var sid)) return;
-        
         var dp = accessory.Data.GetDefaultDrawProperties();
         dp.Name = $"以太税（扭曲地板）中";
         dp.Color = accessory.Data.DefaultDangerColor.WithW(3);
-        dp.Owner = sid;
+        dp.Owner = bossId;
         dp.Scale = new Vector2(60);
         dp.Radian = float.Pi / 2.5f;
         dp.DestoryAt = 6000;
