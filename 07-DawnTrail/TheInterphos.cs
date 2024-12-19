@@ -43,19 +43,20 @@ public class TheInterphos
         }
     }
     // 左右刀，该技能存在两次都打同一边的情况。
-    [ScriptMethod(name: "合法武力", eventType: EventTypeEnum.StartCasting,
-        eventCondition: ["ActionId:regex:^(366(38|39|41|42))$"])]
-    public void LegitimateForce(Event @event, ScriptAccessory accessory)
+    // 36638 先左后左
+    // 36642
+    
+    // 36639 先左后右
+    // 36643
+        
+    // 36641 先右后左
+    // 36642
+        
+    // 36640 先右再右
+    [ScriptMethod(name: "合法武力：左右刀", eventType: EventTypeEnum.StartCasting,
+        eventCondition: ["ActionId:regex:^(366(38|39|40|41))$"])]
+    public void LegitimateForce1(Event @event, ScriptAccessory accessory)
     {
-        // 36638 
-        // 36640
-        
-        // 36639 先左后右
-        // 36643
-        
-        // 36641 先右后左
-        // 36642
-        
         if (!ParseObjectId(@event["SourceId"], out var sid)) return;
         var idStr = @event["ActionId"];
         var firstLeft = idStr switch
