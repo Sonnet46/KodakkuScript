@@ -1,18 +1,9 @@
-using System;
-using System.Linq;
 using System.Numerics;
-using System.Collections.Generic;
-using System.Threading;
-using Dalamud.Game.ClientState.Objects.Types;
 using Newtonsoft.Json;
 using Dalamud.Utility.Numerics;
-using ECommons;
-using ECommons.DalamudServices;
 using KodakkuAssist.Script;
 using KodakkuAssist.Module.GameEvent;
 using KodakkuAssist.Module.Draw;
-
-#pragma warning disable CA1416
 
 namespace KodakkuScript.Script._07_DawnTrail;
 
@@ -175,16 +166,16 @@ public class TheInterphos
         accessory.Method.SendDraw(DrawModeEnum.Default, DrawTypeEnum.Displacement, dp);
     }
     
-    // AoE，并从场地的一侧造成接近场地宽度的横向击退效果
-    [ScriptMethod(name: "强风 击退位置提示", eventType: EventTypeEnum.StartCasting, eventCondition: ["ActionId:36612"])]
+    // AoE，并从场地的一侧造成接近场地宽度的横向击退效果，此脚本为指路连线测试用
+    [ScriptMethod(name: "强风 击退位置指路", eventType: EventTypeEnum.StartCasting, eventCondition: ["ActionId:36612"])]
     public void PowerfulGust(Event @event, ScriptAccessory accessory)
     {
         accessory.Method.TextInfo("横向击退", 6000);
         
         var targetPos = JsonConvert.DeserializeObject<Vector3>(@event["TargetPosition"]);
         var isRight = targetPos.X > 110;
-        var rPos = new Vector3(110, 0, 82);
-        var lPos = new Vector3(90, 0, 82);
+        var rPos = new Vector3(112, 0, 82);
+        var lPos = new Vector3(88, 0, 82);
         var dp = accessory.Data.GetDefaultDrawProperties();
         dp.Name = $"横向击退";
         dp.Color = accessory.Data.DefaultDangerColor;
