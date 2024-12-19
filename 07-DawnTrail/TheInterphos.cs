@@ -85,7 +85,14 @@ public class TheInterphos
         dp2.Rotation = secondLeft ? float.Pi/-2 : float.Pi/ 2;
         accessory.Method.SendDraw(DrawModeEnum.Default, DrawTypeEnum.Rect, dp2);
     }
-
+    
+    // 以太税 获取 Boss id
+    [ScriptMethod(name: "获取 Boss id", eventType: EventTypeEnum.StartCasting, eventCondition: ["ActionId:36604"],userControl: false)]
+    public void findBossId(Event @event, ScriptAccessory accessory)
+    {
+        if (!ParseObjectId(@event["SourceId"], out var sid)) return;
+        bossId = sid;
+    }
     // DotAoE+左中右扇形范围AoE
     [ScriptMethod(name: "以太税（扭曲地板）左/右", eventType: EventTypeEnum.EnvControl, 
         eventCondition: ["Id:regex:^(10000100|04000100)$"])]
