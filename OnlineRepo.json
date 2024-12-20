@@ -6,5 +6,13 @@
         "Author": "Poetry",
         "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/07-DawnTrail/TheInterphos.cs",
         "UpdateInfo": "修正左右刀和以太税触发逻辑问题"
+    },
+    {
+        "Name": "永恒女王歼灭战",
+        "Guid": "e3b0c442-98fc-1c14-9ddf-4b9b8a8f1a1f",
+        "Version": "0.0.0.1",
+        "Author": "Poetry",
+        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/07-DawnTrail/Vanguard.cs",
+        "UpdateInfo": "初次提交可能会有bug，仅进行简单测试"
     }
 ]
