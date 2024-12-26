@@ -34,6 +34,11 @@ public class E11
         }
     }
     
+    public void Init(ScriptAccessory accessory)
+    {
+        accessory.Method.RemoveDraw(".*");
+    }
+    
     // 前后分开绘制
     [ScriptMethod(name:"燃烧击：直线",eventType:EventTypeEnum.StartCasting, eventCondition:["ActionId:regex:^(2206[024])$"])]
     public void 燃烧击_直线 (Event @event, ScriptAccessory accessory)
@@ -63,8 +68,8 @@ public class E11
     [ScriptMethod(name:"火燃爆：击退",eventType:EventTypeEnum.StartCasting, eventCondition:["ActionId:regex:^(220(61|84))$"])]
     public void 火燃爆_击退 (Event @event, ScriptAccessory accessory)
     {
-        Thread.Sleep(8000);
-        accessory.Method.TextInfo($"打完穿进击退!", 2000);
+        Thread.Sleep(6000);
+        accessory.Method.TextInfo($"打完穿进击退!", 5000);
     }
     
     // 22063 扩散直线
@@ -120,6 +125,8 @@ public class E11
         accessory.Method.SendDraw(DrawModeEnum.Default,DrawTypeEnum.Circle,dp);
     }
     
+    // 22079
+    
     // 22083
     // 22085 分身燃烧击
     [ScriptMethod(name: "分身燃烧击：直线", eventType: EventTypeEnum.StartCasting, eventCondition: ["ActionId:regex:^(2208[35])$"])]
@@ -147,11 +154,9 @@ public class E11
         dp.Color = accessory.Data.DefaultDangerColor;
         dp.Owner = tid;
         dp.DestoryAt = 14000;
-        dp.TargetPosition = JsonConvert.DeserializeObject<Vector3>(@event["TargetPosition"]);
         dp.ScaleMode = ScaleMode.ByTime;
         dp.Scale = new(16, 80);
         accessory.Method.SendDraw(DrawModeEnum.Default, DrawTypeEnum.Rect, dp);
     }
-   
 
 }
