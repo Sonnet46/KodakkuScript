@@ -14,5 +14,13 @@
         "Author": "Poetry",
         "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/07-DawnTrail/Vanguard.cs",
         "UpdateInfo": "初次提交可能会有bug，仅进行简单测试"
+    },
+    {
+        "Name": "E11n",
+        "Guid": "e12185b8-2930-44a8-8e1b-9f58c3fd6e0a",
+        "Version": "0.0.0.1",
+        "Author": "Poetry",
+        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/05-Shadowbringers/E11n.cs",
+        "UpdateInfo": "初次提交，仅绘图+火燃爆击退提醒"
     }
 ]

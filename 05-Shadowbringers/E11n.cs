@@ -12,11 +12,11 @@ using KodakkuAssist.Script;
 using KodakkuAssist.Module.GameEvent;
 using KodakkuAssist.Module.Draw;
 
-namespace KodakkuScript.Script._07_DawnTrail;
+namespace KodakkuScript.Script._05_Shadowbringers;
 
-[ScriptType(guid:"e12185b8-2930-44a8-8e1b-9f58c3fd6e0a",name:"E11", territorys: [944], version: "0.0.0.1", 
+[ScriptType(guid:"e12185b8-2930-44a8-8e1b-9f58c3fd6e0a",name:"E11n", territorys: [944], version: "0.0.0.1", 
     author: "Poetry")]
-public class E11
+public class E11n
 {
     private static bool ParseObjectId(string? idStr, out uint id)
     {
