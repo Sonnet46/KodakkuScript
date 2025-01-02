@@ -15,12 +15,15 @@ using KodakkuAssist.Module.Draw;
 
 namespace KodakkuScript.Script._07_DawnTrail;
 
-#pragma warning disable CA1416
-
 [ScriptType(guid: "e3b0c442-98fc-1c14-9ddf-4b9b8a8f1a1f", name: "前哨基地先锋营", territorys: [1198], version: "0.0.0.1",
     author: "Poetry")]
 public class Vanguard
 {
+    public void Init(ScriptAccessory accessory)
+    {
+        accessory.Method.RemoveDraw(".*");
+    }
+    
     // Boss1
     [ScriptMethod(name: "高速机动:钢铁", eventType: EventTypeEnum.StartCasting, eventCondition: ["ActionId:regex:^(36559|39141)$"])]
     public void EnhancedMobility1(Event @event,ScriptAccessory accessory)

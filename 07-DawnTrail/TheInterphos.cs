@@ -12,8 +12,6 @@ using KodakkuAssist.Script;
 using KodakkuAssist.Module.GameEvent;
 using KodakkuAssist.Module.Draw;
 
-#pragma warning disable CA1416
-
 namespace KodakkuScript.Script._07_DawnTrail;
 
 [ScriptType(guid: "1B2EE1F8-D74A-9B08-7E4A-1B02B8D4D5DE", name: "永恒女王歼灭战", territorys: [1202], version: "0.0.0.2",
@@ -24,6 +22,7 @@ public class TheInterphos
     private uint bossId = 0;
     public void Init(ScriptAccessory accessory)
     {
+        accessory.Method.RemoveDraw(@".*");
         stopBuff = false ;  
         bossId = 0;
     }
