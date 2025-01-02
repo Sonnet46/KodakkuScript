@@ -21,11 +21,13 @@ public class Ihuykatumu
 {
     private Vector3 SW;
     private Vector3 NE;
+    private uint bossId = 0;
     public void Init(ScriptAccessory accessory)
     {
         accessory.Method.RemoveDraw(".*");
         SW = DeserializeVector3("{\"X\":-120.76,\"Y\":-118.00,\"Z\":279.09}");
         NE = DeserializeVector3("{\"X\":-93.17,\"Y\":-118.00,\"Z\":250.93}");
+        bossId = 0;
     }
     
     private static bool ParseObjectId(string? idStr, out uint id)
@@ -221,47 +223,88 @@ public class Ihuykatumu
      {"X":-102.276,"Y":-118.000,"Z":264.313}
      {"X":-108.922,"Y":-118.000,"Z":276.528}
      */
+    [ScriptMethod(name:"获取BossId", eventType: EventTypeEnum.StartCasting, eventCondition:["ActionId:36359"],userControl:false)]
+    public void FindBossId(Event @event, ScriptAccessory accessory)
+    {
+        if (!ParseObjectId(@event["SourceId"], out var sid)) return;
+        bossId = sid;
+    }
     
     [ScriptMethod(name: "Boos3-唤风-风刃", eventType: EventTypeEnum.AddCombatant, eventCondition: ["DataId:16748"])]
     public void CuttingWind(Event @event, ScriptAccessory accessory)
     {
-        accessory.Method.TextInfo("风刃", 2000);
-        
-        if (!ParseObjectId(@event["SourceId"], out var sid)) return;
         var spo = DeserializeVector3(@event["SourcePosition"]);
+        
         float epsilon = 1e-5f;
         bool isSW = Math.Abs(spo.X - SW.X) < epsilon;
         
-        
-        var delays = new float[] { 8600, 16700, 24700 };
-        Vector3[] pointsSW = new Vector3[]
-        {
+        var delays = new long[] { 8600, 16700, 24700 };
+        Vector3[] pointsSw =
+        [
             new Vector3(-102.935f, -118.000f, 274.357f),
             new Vector3(-108.935f, -118.000f, 262.224f),
             new Vector3(-105.733f, -118.000f, 252.340f)
-        };
-        Vector3[] pointsNW = new Vector3[]
-        {
+        ];
+        Vector3[] pointsNw =
+        [
             new Vector3(-111.688f, -118.000f, 253.942f),
             new Vector3(-102.276f, -118.000f, 264.313f),
             new Vector3(-108.922f, -118.000f, 276.528f)
-        };
+        ];
         
-        
- 
+        if (isSW)
+        {
+            accessory.Log.Debug("风刃SW");
+            WindAoe(@event, accessory, pointsSw[0], 0, delays[0]);
+            WindAoe(@event, accessory, pointsSw[1], delays[0], delays[1]-delays[0]);
+            WindAoe(@event, accessory, pointsSw[2], delays[1], delays[2]-delays[1]);
+        }
+        else
+        {
+            accessory.Log.Debug("风刃NW");
+            WindAoe(@event, accessory, pointsNw[0], 0, delays[0]);
+            WindAoe(@event, accessory, pointsNw[1], delays[0], delays[1]-delays[0]);
+            WindAoe(@event, accessory, pointsNw[2], delays[1], delays[2]-delays[1]);
+        }
+
+
     }
     
     //aoe绘制组
-    public void WindAoe(Event @event, ScriptAccessory accessory)
+    public void WindAoe(Event @event, ScriptAccessory accessory,Vector3 point, long delay,long destoryAt)
     {
         var dp1 = accessory.Data.GetDefaultDrawProperties();
         var dp2 = accessory.Data.GetDefaultDrawProperties();
         var dp3 = accessory.Data.GetDefaultDrawProperties();
         dp1.Name = $"风刃:1";
+        dp1.Color = accessory.Data.DefaultDangerColor;
+        dp1.Delay = delay;
+        dp1.DestoryAt = destoryAt;
+        dp1.Owner = bossId;
+        dp1.Scale = new (8,72);
+        dp1.Position = point;
         
         dp2.Name = $"风刃:2";
-       
-        dp2.Name = $"风刃:3";
+        dp2.Color = accessory.Data.DefaultDangerColor;
+        dp2.Delay = delay;
+        dp2.DestoryAt = destoryAt;
+        dp2.Owner = bossId;
+        dp2.Scale = new (8,72);
+        dp2.Rotation = float.Pi/4;
+        dp2.Position = point;
+        
+        dp3.Name = $"风刃:3";
+        dp3.Color = accessory.Data.DefaultDangerColor;
+        dp3.Delay = delay;
+        dp3.DestoryAt = destoryAt;
+        dp3.Owner = bossId;
+        dp3.Scale = new (8,72);
+        dp3.Rotation = float.Pi/2;
+        dp3.Position = point;
+        
+        accessory.Method.SendDraw(DrawModeEnum.Default, DrawTypeEnum.Straight, dp1);
+        accessory.Method.SendDraw(DrawModeEnum.Default, DrawTypeEnum.Straight, dp2);
+        accessory.Method.SendDraw(DrawModeEnum.Default, DrawTypeEnum.Straight, dp3);
     }
     
 }
