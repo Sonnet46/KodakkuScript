@@ -56,15 +56,15 @@ public class Ihuykatumu
         return JsonConvert.DeserializeObject<int>(propertyName);
     }
     
-    // // 死刑
-    // [ScriptMethod(name: "死刑文字提示", eventType: EventTypeEnum.StartCasting, 
-    //     eventCondition: ["ActionId:regex:^(39132|36347)$"])]
-    // public void Death(Event @event, ScriptAccessory accessory)
-    // {
-    //     var duration = DeserializeInt(@event, "DurationMilliseconds");
-    //     accessory.Method.TextInfo("死刑", duration);
-    // }
-    //
+    // 死刑
+    [ScriptMethod(name: "死刑文字提示", eventType: EventTypeEnum.StartCasting, 
+        eventCondition: ["ActionId:regex:^(39132|36347)$"])]
+    public void Death(Event @event, ScriptAccessory accessory)
+    {
+        var duration = DeserializeInt(@event["DurationMilliseconds"]);
+        accessory.Method.TextInfo("死刑", duration);
+    }
+    
     
     // AOE
     [ScriptMethod(name: "AOE文字提示", eventType: EventTypeEnum.StartCasting,
@@ -82,7 +82,7 @@ public class Ihuykatumu
     
     // 重吐于世
     // 塌方（圆圈）
-    [ScriptMethod(name:"Boos1-塌方:圆圈",eventType:EventTypeEnum.StartCasting,eventCondition:["ActionId:regex:^(36502|36498|36497)$"])]
+    [ScriptMethod(name:"Boss1-塌方:圆圈",eventType:EventTypeEnum.StartCasting,eventCondition:["ActionId:regex:^(36502|36498|36497)$"])]
     public void CollapseCircle(Event @event,ScriptAccessory accessory)
     {
         if (!ParseObjectId(@event["SourceId"], out var sid)) return;
@@ -108,7 +108,7 @@ public class Ihuykatumu
     }
     
     // 塌方（直线）
-    [ScriptMethod(name: "Boos1-塌方:直线", eventType: EventTypeEnum.StartCasting, eventCondition: ["ActionId:regex:^(36503|36504|36499|36500)$"])]
+    [ScriptMethod(name: "Boss1-塌方:直线", eventType: EventTypeEnum.StartCasting, eventCondition: ["ActionId:regex:^(36503|36504|36499|36500)$"])]
     public void CollapseLine(Event @event, ScriptAccessory accessory)
     {
         if (!ParseObjectId(@event["SourceId"], out var sid)) return;
@@ -134,7 +134,7 @@ public class Ihuykatumu
     }
     
     // 腐烂（月环）
-    [ScriptMethod(name: "Boos1-腐烂:月环", eventType: EventTypeEnum.StartCasting, eventCondition: ["ActionId:36505"])]
+    [ScriptMethod(name: "Boss1-腐烂:月环", eventType: EventTypeEnum.StartCasting, eventCondition: ["ActionId:36505"])]
     public void Rotting(Event @event, ScriptAccessory accessory)
     {
         if (!ParseObjectId(@event["SourceId"], out var sid)) return;
@@ -153,7 +153,7 @@ public class Ihuykatumu
     
     // Boss2_瞌睡怪
     // 瞌睡舞-敲击(直线）
-    [ScriptMethod(name: "Boos2-瞌睡舞-敲击:直线", eventType: EventTypeEnum.StartCasting, eventCondition: ["ActionId:regex:^(36479|36482)$"])]
+    [ScriptMethod(name: "Boss2-瞌睡舞-敲击:直线", eventType: EventTypeEnum.StartCasting, eventCondition: ["ActionId:regex:^(36479|36482)$"])]
     public void Knock(Event @event, ScriptAccessory accessory)
     {
         if (!ParseObjectId(@event["SourceId"], out var sid)) return;
@@ -177,7 +177,7 @@ public class Ihuykatumu
     // Boos3_亚波伦
     
     // 飞蝗之刃（直线）
-    [ScriptMethod(name: "Boos3-飞蝗之刃:直线", eventType: EventTypeEnum.StartCasting, eventCondition: ["ActionId:36346"])]
+    [ScriptMethod(name: "Boss3-飞蝗之刃:直线", eventType: EventTypeEnum.StartCasting, eventCondition: ["ActionId:36346"])]
     public void Blade(Event @event, ScriptAccessory accessory)
     {
         if (!ParseObjectId(@event["SourceId"], out var sid)) return;
@@ -193,7 +193,7 @@ public class Ihuykatumu
     }
     
     //闪电镰（扇状放电）
-    [ScriptMethod(name: "Boos3-闪电镰:扇状放电", eventType: EventTypeEnum.StartCasting, eventCondition: ["ActionId:36351"])]
+    [ScriptMethod(name: "Boss3-闪电镰:扇状放电", eventType: EventTypeEnum.StartCasting, eventCondition: ["ActionId:36351"])]
     public void Lightning(Event @event, ScriptAccessory accessory)
     {
         if (!ParseObjectId(@event["SourceId"], out var sid)) return;
@@ -230,7 +230,7 @@ public class Ihuykatumu
         bossId = sid;
     }
     
-    [ScriptMethod(name: "Boos3-唤风-风刃", eventType: EventTypeEnum.AddCombatant, eventCondition: ["DataId:16748"])]
+    [ScriptMethod(name: "Boss3-唤风-风刃", eventType: EventTypeEnum.AddCombatant, eventCondition: ["DataId:16748"])]
     public void CuttingWind(Event @event, ScriptAccessory accessory)
     {
         var spo = DeserializeVector3(@event["SourcePosition"]);
