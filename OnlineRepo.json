@@ -32,14 +32,6 @@
         "UpdateInfo": "初次提交，基本绘制完成"
     },
     {
-        "Name": "丛林竞流生息河岸",
-        "Guid": "123e4567-e89b-12d3-a456-426614174000",
-        "Version": "0.0.0.1",
-        "Author": "Poetry",
-        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/07-DawnTrail/Ihuykatumu.cs",
-        "UpdateInfo": "初次提交，基本绘制完成"
-    },
-    {
         "Name": "魂魄工厂创生设施",
         "Guid": "9F1D4DC0-1891-7AC0-9571-D5266198751D",
         "Version": "0.0.0.1",
