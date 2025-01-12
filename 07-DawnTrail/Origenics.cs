@@ -134,7 +134,7 @@ public class Origenics
         
         dp.Name = $"Boss2-回旋臂";
         dp.Owner = sid;
-        dp.Color = accessory.Data.DefaultDangerColor.WithW(1);
+        dp.Color = accessory.Data.DefaultDangerColor.WithW(2);
         dp.Scale = new Vector2(30);
         dp.Radian = float.Pi/2;
         dp.DestoryAt = DeserializeInt(@event["DurationMilliseconds"]);
@@ -151,7 +151,7 @@ public class Origenics
         var dp = accessory.Data.GetDefaultDrawProperties();
         dp.Name = $"Boss2-齐射:直线";
         dp.Owner = sid;
-        dp.Color = accessory.Data.DefaultDangerColor.WithW(1);
+        dp.Color = accessory.Data.DefaultDangerColor.WithW(2);
         dp.Scale = new Vector2(4,40);
         dp.DestoryAt = DeserializeInt(@event["DurationMilliseconds"]);
         accessory.Method.SendDraw(DrawModeEnum.Imgui,DrawTypeEnum.Rect,dp);
@@ -167,7 +167,7 @@ public class Origenics
         var dp = accessory.Data.GetDefaultDrawProperties();
         dp.Name = $"Boss2-激光炮:直线";
         dp.Owner = sid;
-        dp.Color = accessory.Data.DefaultDangerColor.WithW(1);
+        dp.Color = accessory.Data.DefaultDangerColor.WithW(2);
         dp.Scale = new Vector2(10,40);
         dp.DestoryAt = DeserializeInt(@event["DurationMilliseconds"]);
         accessory.Method.SendDraw(DrawModeEnum.Imgui,DrawTypeEnum.Rect,dp);
