@@ -1,0 +1,30 @@
+name: Update OnlineRepo.json
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Scripts/**'
+      - 'ScriptParser/**'
+      - '.github/workflows/update-scripts.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Generate OnlineRepo.json
+        run: dotnet run --project ScriptParser/ScriptParser.csproj -- .
+      - name: Commit generated index
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: update OnlineRepo.json'
+          file_pattern: OnlineRepo.json
+          commit_user_name: 'GitHub Actions Bot'
+          commit_user_email: 'actions@github.com'

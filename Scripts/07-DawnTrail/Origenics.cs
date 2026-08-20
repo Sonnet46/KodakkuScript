@@ -6,12 +6,10 @@ using System.Threading;
 using Dalamud.Game.ClientState.Objects.Types;
 using Newtonsoft.Json;
 using Dalamud.Utility.Numerics;
-using ECommons;
-using ECommons.DalamudServices;
 using KodakkuAssist.Script;
 using KodakkuAssist.Module.GameEvent;
 using KodakkuAssist.Module.Draw;
-namespace KodakkuScript.Script._07_DawnTrail;
+namespace KodakkuAssistScripts.Scripts._07_DawnTrail;
 
 [ScriptType(guid: "9F1D4DC0-1891-7AC0-9571-D5266198751D", name: "魂魄工厂创生设施", territorys: [1208], version: "0.0.0.1",
     author: "Poetry")]

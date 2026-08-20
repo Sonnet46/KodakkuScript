@@ -7,13 +7,11 @@ using System.Threading;
 using Dalamud.Game.ClientState.Objects.Types;
 using Newtonsoft.Json;
 using Dalamud.Utility.Numerics;
-using ECommons;
-using ECommons.DalamudServices;
 using KodakkuAssist.Script;
 using KodakkuAssist.Module.GameEvent;
 using KodakkuAssist.Module.Draw;
 
-namespace KodakkuScript.Script._07_DawnTrail;
+namespace KodakkuAssistScripts.Scripts._07_DawnTrail;
 
 [ScriptType(guid: "e3b0c442-98fc-1c14-9ddf-4b9b8a8f1a1f", name: "前哨基地先锋营", territorys: [1198], version: "0.0.0.1",
     author: "Poetry")]

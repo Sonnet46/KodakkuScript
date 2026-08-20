@@ -1,0 +1,46 @@
+# .NET / MSBuild build output
+bin/
+obj/
+[Bb]uild/
+[Bb]uilds/
+artifacts/
+
+# Visual Studio / Rider / JetBrains local settings
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet and local package caches
+packages/
+*.nupkg
+*.snupkg
+
+# Test and coverage output
+TestResults/
+coverage/
+coverage*.xml
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local environment / secrets
+.env
+.env.*
+!.env.example
+
+# Generated parser/runtime files
+ScriptParser/bin/
+ScriptParser/obj/

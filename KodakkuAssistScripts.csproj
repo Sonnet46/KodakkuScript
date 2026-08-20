@@ -1,0 +1,21 @@
+<Project Sdk="Dalamud.CN.Net.Sdk/15.0.0">
+  <PropertyGroup>
+    <AssemblyName>KodakkuAssistScripts</AssemblyName>
+    <RootNamespace>KodakkuAssistScripts</RootNamespace>
+    <Version>0.1.0</Version>
+    <Use_DalamudPackager>false</Use_DalamudPackager>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <NoWarn>$(NoWarn);CA2252</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Scripts/**/*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="KodakkuAssist">
+      <HintPath>$(AppData)\XIVLauncherCN\installedPlugins\KodakkuAssist\0.5.1.54\KodakkuAssist.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

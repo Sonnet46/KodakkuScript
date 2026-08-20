@@ -4,7 +4,7 @@
         "Guid": "1B2EE1F8-D74A-9B08-7E4A-1B02B8D4D5DE",
         "Version": "0.0.0.2",
         "Author": "Poetry",
-        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/07-DawnTrail/TheInterphos.cs",
+        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/Scripts/07-DawnTrail/TheInterphos.cs",
         "UpdateInfo": "修正左右刀和以太税触发逻辑问题"
     },
     {
@@ -12,7 +12,7 @@
         "Guid": "e3b0c442-98fc-1c14-9ddf-4b9b8a8f1a1f",
         "Version": "0.0.0.1",
         "Author": "Poetry",
-        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/07-DawnTrail/Vanguard.cs",
+        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/Scripts/07-DawnTrail/Vanguard.cs",
         "UpdateInfo": "初次提交可能会有bug，仅进行简单测试"
     },
     {
@@ -20,7 +20,7 @@
         "Guid": "e12185b8-2930-44a8-8e1b-9f58c3fd6e0a",
         "Version": "0.0.0.1",
         "Author": "Poetry",
-        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/05-Shadowbringers/E11n.cs",
+        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/Scripts/05-Shadowbringers/E11n.cs",
         "UpdateInfo": "初次提交，仅绘图+火燃爆击退提醒"
     },
     {
@@ -28,7 +28,7 @@
         "Guid": "123e4567-e89b-12d3-a456-426614174000",
         "Version": "0.0.0.1",
         "Author": "Poetry",
-        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/07-DawnTrail/Ihuykatumu.cs",
+        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/Scripts/07-DawnTrail/Ihuykatumu.cs",
         "UpdateInfo": "初次提交，基本绘制完成"
     },
     {
@@ -36,7 +36,7 @@
         "Guid": "9F1D4DC0-1891-7AC0-9571-D5266198751D",
         "Version": "0.0.0.1",
         "Author": "Poetry",
-        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/07-DawnTrail/Origenics.cs",
+        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/Scripts/07-DawnTrail/Origenics.cs",
         "UpdateInfo": "初次提交，基本绘制完成"
     }
 ]

@@ -7,13 +7,11 @@ using System.Threading;
 using Dalamud.Game.ClientState.Objects.Types;
 using Newtonsoft.Json;
 using Dalamud.Utility.Numerics;
-using ECommons;
-using ECommons.DalamudServices;
 using KodakkuAssist.Script;
 using KodakkuAssist.Module.GameEvent;
 using KodakkuAssist.Module.Draw;
 
-namespace KodakkuScript.Script._07_DawnTrail;
+namespace KodakkuAssistScripts.Scripts._07_DawnTrail;
 
 [ScriptType(guid: "123e4567-e89b-12d3-a456-426614174000", name: "丛林竞流生息河岸", territorys: [1167], version: "0.0.0.1",
     author: "Poetry")]

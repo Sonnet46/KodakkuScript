@@ -6,13 +6,11 @@ using System.Threading;
 using Dalamud.Game.ClientState.Objects.Types;
 using Newtonsoft.Json;
 using Dalamud.Utility.Numerics;
-using ECommons;
-using ECommons.DalamudServices;
 using KodakkuAssist.Script;
 using KodakkuAssist.Module.GameEvent;
 using KodakkuAssist.Module.Draw;
 
-namespace KodakkuScript.Script._07_DawnTrail;
+namespace KodakkuAssistScripts.Scripts._07_DawnTrail;
 
 [ScriptType(guid: "1B2EE1F8-D74A-9B08-7E4A-1B02B8D4D5DE", name: "永恒女王歼灭战", territorys: [1202], version: "0.0.0.2",
         author: "Poetry")]
