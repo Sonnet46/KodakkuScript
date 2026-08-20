@@ -15,7 +15,7 @@ using System.Threading;
 namespace the_Interphos;
 
 [ScriptType(guid: "16a531a4-28b9-414d-9209-ba6673d1f268", name: "LV100 永恒女王歼灭战", territorys: [1202],
-    version: "0.0.0.3", author: "Poetry", updateInfo: """
+    version: "0.0.0.4", author: "Poetry", updateInfo: """
                                                        Tetora (南雲鉄虎) 修改的版本，
                                                       删除过时的EdgeTTS，统一使用TTS
                                                       """)]
