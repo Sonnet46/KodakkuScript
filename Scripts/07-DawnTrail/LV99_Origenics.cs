@@ -11,10 +11,15 @@ using KodakkuAssist.Module.GameEvent;
 using KodakkuAssist.Module.Draw;
 namespace KodakkuAssistScripts.Scripts._07_DawnTrail;
 
-[ScriptType(guid: "9F1D4DC0-1891-7AC0-9571-D5266198751D", name: "魂魄工厂创生设施", territorys: [1208], version: "0.0.0.1",
-    author: "Poetry")]
+[ScriptType(guid: "9F1D4DC0-1891-7AC0-9571-D5266198751D", name: "LV99 魂魄工厂创生设施", territorys: [1208], version: "0.0.0.2",
+    author: "Poetry", updateInfo: "移除 ECommons 依赖并修正命名空间")]
 public class Origenics
 {
+    private const string UpdateHistory = """
+        更新历史：
+        - v0.0.0.2：移除 ECommons 依赖并修正命名空间。
+        - v0.0.0.1：初次提交，基本绘制完成。
+        """;
     private int _aoeCount = 0;
     private readonly object _lockObject = new object(); 
     private uint _thunderId = 0;

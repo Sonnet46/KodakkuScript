@@ -1,42 +1,57 @@
 [
-    {
-        "Name": "永恒女王歼灭战",
-        "Guid": "1B2EE1F8-D74A-9B08-7E4A-1B02B8D4D5DE",
-        "Version": "0.0.0.2",
-        "Author": "Poetry",
-        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/Scripts/07-DawnTrail/TheInterphos.cs",
-        "UpdateInfo": "修正左右刀和以太税触发逻辑问题"
-    },
-    {
-        "Name": "前哨基地先锋营",
-        "Guid": "e3b0c442-98fc-1c14-9ddf-4b9b8a8f1a1f",
-        "Version": "0.0.0.1",
-        "Author": "Poetry",
-        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/Scripts/07-DawnTrail/Vanguard.cs",
-        "UpdateInfo": "初次提交可能会有bug，仅进行简单测试"
-    },
-    {
-        "Name": "E11n",
-        "Guid": "e12185b8-2930-44a8-8e1b-9f58c3fd6e0a",
-        "Version": "0.0.0.1",
-        "Author": "Poetry",
-        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/Scripts/05-Shadowbringers/E11n.cs",
-        "UpdateInfo": "初次提交，仅绘图+火燃爆击退提醒"
-    },
-    {
-        "Name": "丛林竞流生息河岸",
-        "Guid": "123e4567-e89b-12d3-a456-426614174000",
-        "Version": "0.0.0.1",
-        "Author": "Poetry",
-        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/Scripts/07-DawnTrail/Ihuykatumu.cs",
-        "UpdateInfo": "初次提交，基本绘制完成"
-    },
-    {
-        "Name": "魂魄工厂创生设施",
-        "Guid": "9F1D4DC0-1891-7AC0-9571-D5266198751D",
-        "Version": "0.0.0.1",
-        "Author": "Poetry",
-        "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/refs/heads/main/Scripts/07-DawnTrail/Origenics.cs",
-        "UpdateInfo": "初次提交，基本绘制完成"
-    }
+  {
+    "Name": "E11n",
+    "Guid": "e12185b8-2930-44a8-8e1b-9f58c3fd6e0a",
+    "Version": "0.0.0.2",
+    "Author": "Poetry",
+    "TerritoryIds": [
+      944
+    ],
+    "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/main/Scripts/05-Shadowbringers/E11n.cs",
+    "UpdateInfo": "移除 ECommons 依赖并修正命名空间"
+  },
+  {
+    "Name": "LV100 永恒女王歼灭战",
+    "Guid": "16a531a4-28b9-414d-9209-ba6673d1f268",
+    "Version": "0.0.0.3",
+    "Author": "Poetry",
+    "TerritoryIds": [
+      1202
+    ],
+    "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/main/Scripts/07-DawnTrail/LV100_TheInterphos.cs",
+    "UpdateInfo": "更新为 Tetora (南雲鉄虎) 修改的版本"
+  },
+  {
+    "Name": "LV91 丛林竞流生息河岸",
+    "Guid": "123e4567-e89b-12d3-a456-426614174000",
+    "Version": "0.0.0.2",
+    "Author": "Poetry",
+    "TerritoryIds": [
+      1167
+    ],
+    "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/main/Scripts/07-DawnTrail/LV91_Ihuykatumu.cs",
+    "UpdateInfo": "移除 ECommons 依赖并修正命名空间"
+  },
+  {
+    "Name": "LV97 前哨基地先锋营",
+    "Guid": "e3b0c442-98fc-1c14-9ddf-4b9b8a8f1a1f",
+    "Version": "0.0.0.2",
+    "Author": "Poetry",
+    "TerritoryIds": [
+      1198
+    ],
+    "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/main/Scripts/07-DawnTrail/LV97_Vanguard.cs",
+    "UpdateInfo": "移除 ECommons 依赖并修正命名空间"
+  },
+  {
+    "Name": "LV99 魂魄工厂创生设施",
+    "Guid": "9F1D4DC0-1891-7AC0-9571-D5266198751D",
+    "Version": "0.0.0.2",
+    "Author": "Poetry",
+    "TerritoryIds": [
+      1208
+    ],
+    "DownloadUrl": "https://raw.githubusercontent.com/Sonnet46/KodakkuScript/main/Scripts/07-DawnTrail/LV99_Origenics.cs",
+    "UpdateInfo": "移除 ECommons 依赖并修正命名空间"
+  }
 ]

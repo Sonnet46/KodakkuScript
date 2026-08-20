@@ -13,10 +13,15 @@ using KodakkuAssist.Module.Draw;
 
 namespace KodakkuAssistScripts.Scripts._07_DawnTrail;
 
-[ScriptType(guid: "123e4567-e89b-12d3-a456-426614174000", name: "丛林竞流生息河岸", territorys: [1167], version: "0.0.0.1",
-    author: "Poetry")]
+[ScriptType(guid: "123e4567-e89b-12d3-a456-426614174000", name: "LV91 丛林竞流生息河岸", territorys: [1167], version: "0.0.0.2",
+    author: "Poetry", updateInfo: "移除 ECommons 依赖并修正命名空间")]
 public class Ihuykatumu
 {
+    private const string UpdateHistory = """
+        更新历史：
+        - v0.0.0.2：移除 ECommons 依赖并修正命名空间。
+        - v0.0.0.1：初次提交，基本绘制完成。
+        """;
     private Vector3 SW;
     private Vector3 NE;
     private uint bossId = 0;

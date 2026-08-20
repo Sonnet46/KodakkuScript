@@ -13,10 +13,15 @@ using KodakkuAssist.Module.Draw;
 
 namespace KodakkuAssistScripts.Scripts._07_DawnTrail;
 
-[ScriptType(guid: "e3b0c442-98fc-1c14-9ddf-4b9b8a8f1a1f", name: "前哨基地先锋营", territorys: [1198], version: "0.0.0.1",
-    author: "Poetry")]
+[ScriptType(guid: "e3b0c442-98fc-1c14-9ddf-4b9b8a8f1a1f", name: "LV97 前哨基地先锋营", territorys: [1198], version: "0.0.0.2",
+    author: "Poetry", updateInfo: "移除 ECommons 依赖并修正命名空间")]
 public class Vanguard
 {
+    private const string UpdateHistory = """
+        更新历史：
+        - v0.0.0.2：移除 ECommons 依赖并修正命名空间。
+        - v0.0.0.1：初次提交，可能存在问题，仅进行简单测试。
+        """;
     public void Init(ScriptAccessory accessory)
     {
         accessory.Method.RemoveDraw(".*");
