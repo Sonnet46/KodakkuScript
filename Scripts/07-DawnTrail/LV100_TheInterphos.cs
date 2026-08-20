@@ -15,23 +15,26 @@ using System.Threading;
 namespace the_Interphos;
 
 [ScriptType(guid: "16a531a4-28b9-414d-9209-ba6673d1f268", name: "LV100 永恒女王歼灭战", territorys: [1202],
-    version: "0.0.0.3", author: "Poetry", updateInfo: "更新为 Tetora (南雲鉄虎) 修改的版本")]
+    version: "0.0.0.3", author: "Poetry", updateInfo: """
+                                                       Tetora (南雲鉄虎) 修改的版本，
+                                                      删除过时的EdgeTTS，统一使用TTS
+                                                      """)]
 
 public class TheInterphos
     {
         private const string UpdateHistory = 
             """
             更新历史:
-             - v0.0.0.3: 更新为 Tetora (南雲鉄虎) 修改的版本
+             - v0.0.0.4：删除过时的EdgeTTS，统一使用TTS
+             - v0.0.0.3：更新为 Tetora (南雲鉄虎) 修改的版本
              - v0.0.0.2：修正左右刀和以太税触发逻辑
              - v0.0.0.1：初次提交，基本绘制完成。
             """;
     
-        [UserSetting("TTS开关（TTS请二选一开启）")]
+        [UserSetting("TTS开关")]
         public bool isTTS { get; set; } = false;
     
-        [UserSetting("EdgeTTS开关（TTS请二选一开启）")]
-        public bool isEdgeTTS { get; set; } = true;
+        //accessory.Method.EdgeTTS已标记为过时，统一使用accessory.Method.TTS
     
         [UserSetting("弹窗文本提示开关")]
         public bool isText { get; set; } = true;
@@ -166,7 +169,6 @@ public class TheInterphos
         {
             if(isText) accessory.Method.TextInfo("死刑", 4300);
             if(isTTS) accessory.Method.TTS("死刑");
-            if(isEdgeTTS) accessory.Method.EdgeTTS("死刑");
             
         }
 
@@ -176,7 +178,6 @@ public class TheInterphos
         // {
         //     if(isText) accessory.Method.TextInfo("AOE", 4300);
         //     if(isTTS) accessory.Method.TTS("AOE");
-        //     if(isEdgeTTS) accessory.Method.EdgeTTS("AOE");
         // }
         //
 
@@ -194,7 +195,6 @@ public class TheInterphos
         {
             if(isText) accessory.Method.TextInfo("斜角击退", 5300);
             if(isTTS) accessory.Method.TTS("斜角击退");
-            if(isEdgeTTS) accessory.Method.EdgeTTS("斜角击退");
 
             var dp = accessory.Data.GetDefaultDrawProperties();
             dp.Name = $"斜角击退";
@@ -215,7 +215,6 @@ public class TheInterphos
         {
             if(isText) accessory.Method.TextInfo("横向击退", 5300);
             if(isTTS) accessory.Method.TTS("横向击退");
-            if(isEdgeTTS) accessory.Method.EdgeTTS("横向击退");
 
             var targetPos = JsonConvert.DeserializeObject<Vector3>(@event["TargetPosition"]);
             var isRight = targetPos.X > 110;
@@ -249,7 +248,6 @@ public class TheInterphos
             if (!ParseObjectId(@event["SourceId"], out var sid)) return;
             if(isText) accessory.Method.TextInfo("月环", 7300);
             if(isTTS) accessory.Method.TTS("月环");
-            if(isEdgeTTS) accessory.Method.EdgeTTS("月环");
 
             var dp = accessory.Data.GetDefaultDrawProperties();
             dp.Name = $"月环";
@@ -289,7 +287,6 @@ public class TheInterphos
                 Thread.Sleep(14000);
                 if(isText) accessory.Method.TextInfo("停止移动", 1300, true);
                 if(isTTS) accessory.Method.TTS("停止移动");
-                if(isEdgeTTS) accessory.Method.EdgeTTS("停止移动");
 
             }
         }
@@ -305,8 +302,6 @@ public class TheInterphos
                 Thread.Sleep(14000);
                 if(isText) accessory.Method.TextInfo("背对Boss", 1300, true);
                 if(isTTS) accessory.Method.TTS("背对Boss");
-                if(isEdgeTTS) accessory.Method.EdgeTTS("背对Boss");
-
             }
         }
         
